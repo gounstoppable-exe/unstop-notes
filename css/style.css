@@ -1,0 +1,193 @@
+/* ====== FONTS ====== */
+@font-face {
+  src: url(../assets/fonts/Gilroy-Bold.ttf);
+  font-family: "Gilroy";
+}
+@font-face {
+  src: url(../assets/fonts/Gilroy-ExtraBold.ttf);
+  font-family: "Gilroy";
+}
+@font-face {
+  src: url(../assets/fonts/Gilroy-Regular.ttf);
+  font-family: "Gilroy";
+}
+@font-face {
+  src: url(../assets/fonts/Gilroy-SemiBold.ttf);
+  font-family: "Gilroy";
+}
+@font-face {
+  src: url(../assets/fonts/Tungsten.ttf);
+  font-family: "Tungsten";
+}
+/* ====== VARIABLES ====== */
+:root {
+  /* ====== COLORS ====== */
+  --white: #fff;
+  --grey: rgb(255, 255, 255);
+  /* ====== GLASSMORPHISM ====== */
+  --glass_bg: #ffffff40;
+  --glass_outline: 3px solid #ffffff60;
+  --glass_bgblur: 15px;
+  /* ====== TYPOGRAPHY ====== */
+  --body_font: "Gilroy", sans-serif;
+  --heading_font: "Tungsten", arial, georgia, sans-serif;
+  --body_font_size: 1rem;
+  --body_font_size_large: 1.1rem;
+  --big_heading_font_size: 6rem;
+  --small_heading_font_size: 3rem;
+}
+/* ====== DEFAULT ====== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--white);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(196, 196, 196);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--body_font);
+  font-size: var(--body_font_size);
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+h1 {
+  font-family: var(--heading_font);
+  font-weight: 400;
+}
+.glass {
+  background-color: var(--glass_bg);
+  backdrop-filter: blur(var(--glass_bgblur));
+  outline: var(--glass_outline);
+}
+/* ====== MAIN ====== */
+main {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url(https://i.ibb.co/PZd87FV/Group-2.png);
+  background-repeat: no-repeat;
+  background-position: fixed;
+  background-position: top;
+  background-size: cover;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem 1rem;
+}
+.headerTexts {
+  color: #fff;
+  text-align: center;
+}
+.headerTexts h1 {
+  font-size: var(--big_heading_font_size);
+  font-weight: 400;
+}
+.addNotesContainer {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+}
+.addNotesContainer textarea {
+  width: 80vw;
+  min-height: 6rem;
+  border-radius: 1rem;
+  font-family: var(--body_font);
+  padding: 1rem;
+  font-size: var(--body_font_size_large);
+  color: #fff;
+  resize: vertical;
+  border: none;
+}
+.addNotesContainer textarea::placeholder {
+  color: var(--grey);
+}
+.addNotesContainer button {
+  display: inline-block;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.3rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  color: var(--white);
+}
+#plusIcon {
+  font-size: 1.2rem;
+}
+.notesContainer {
+  width: 80vw;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 2rem;
+}
+.noteCard {
+  width: 20rem;
+  padding: 1.2rem 1.3rem;
+  border-radius: 1rem;
+  word-wrap: break-word;
+  transition: all 0.3s ease;
+}
+.noteCard:hover{
+  transform: scale(1.04);
+}
+.noteCard h1,
+p {
+  color: var(--white);
+}
+.noteCard h1 {
+  text-decoration: underline;
+  font-size: var(--small_heading_font_size);
+}
+.noteCard p {
+  margin-top: 1rem;
+}
+.noteCard button {
+  width: 100%;
+  margin-top: 1.2rem;
+  color: var(--white);
+  font-family: var(--body_font);
+  font-weight: 600;
+  padding: 0.6rem 0;
+  border-radius: 3rem;
+  transition: all 0.3s ease;
+}
+.noteCard button:hover{
+  transform: scale(1.04);
+}
+.defaultText {
+  width: 80vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: var(--body_font_size_large);
+}
+
+@media screen and (max-width: 511px) {
+  :root{
+    --body_font_size: 0.9rem;
+    --body_font_size_large: 1rem;
+    --big_heading_font_size: 4rem;
+    --small_heading_font_size: 2rem;
+  }
+}
